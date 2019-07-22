@@ -51,7 +51,7 @@
     "framework-mbed": {
       "type": "framework",
       "optional": true,
-      "version": "~5.51204.190524"
+      "version": "https://gitee.com/kaikong/mbed-os.git#mbed-os-5.12"
     },
     "framework-cmsis": {
       "type": "framework",
@@ -71,12 +71,12 @@
     "framework-arduinoststm32": {
       "type": "framework",
       "optional": true,
-      "version": "~3.10601.190716"
+      "version": "https://gitee.com/kaikong/Arduino_Core_STM32.git#master"
     },
     "framework-arduinoststm32-maple": {
       "type": "framework",
       "optional": true,
-      "version": "~1.10000.190516"
+      "version": "https://gitee.com/kaikong/Arduino_STM32.git#master"
     },
     "framework-arduinostm32mxchip": {
       "type": "framework",
@@ -96,7 +96,7 @@
     "tool-openocd": {
       "type": "uploader",
       "optional": true,
-      "version": "~2.1000.0"
+      "version": "https://gitee.com/kaikong/tool-openocd.git"
     },
     "tool-jlink": {
       "type": "uploader",
