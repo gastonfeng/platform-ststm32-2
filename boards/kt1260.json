@@ -37,12 +37,9 @@
     "protocol": "stlink",
     "protocols": [
       "jlink",
-      "stlink",
-      "blackmagic",
-      "mbed",
-      "dfu"
+      "stlink"
     ]
   },
-  "url": "http://www.st.com/content/st_com/en/products/microcontrollers/stm32-32-bit-arm-cortex-mcus/stm32f1-series/stm32f103/stm32f103rc.html",
-  "vendor": "Generic"
+  "url": "http://www.kaikong.cn/r/kdx",
+  "vendor": "Kaikong"
 }
