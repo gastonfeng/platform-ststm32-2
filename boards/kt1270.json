@@ -16,7 +16,7 @@
     ],
     "ldscript": "STM32F103xB.ld",
     "mcu": "stm32f103rct6",
-    "variant": "STM32F1"
+    "variant": "kt1270"
   },
   "debug": {
     "openocd_target": "stm32f1x",
