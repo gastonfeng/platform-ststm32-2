@@ -32,7 +32,7 @@
   ],
   "name": "kc1220",
   "upload": {
-    "maximum_ram_size": 49152,
+    "maximum_ram_size": 65536,
     "maximum_size": 262144,
     "protocol": "stlink",
     "protocols": [
@@ -40,6 +40,6 @@
       "stlink"
     ]
   },
-  "url": "http://www.kaikong.cn/r/kdx",
+  "url": "http://www.kaikong.cn/r/ugI",
   "vendor": "Kaikong"
 }

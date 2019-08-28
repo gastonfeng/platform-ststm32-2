@@ -1,4 +1,3 @@
-<<<<<<< .mine
 {
   "build": {
     "core": "stm32",
@@ -47,53 +46,3 @@
   "url": "http://www.kaikong.cn/r/fMb",
   "vendor": "Kaikong"
 }
-=======
-{
-  "build": {
-    "core": "stm32",
-    "cpu": "cortex-m3",
-    "extra_flags": "-DSTM32F103xE",
-    "f_cpu": "72000000L",
-    "hwids": [
-      [
-        "0x1EAF",
-        "0x0003"
-      ],
-      [
-        "0x1EAF",
-        "0x0004"
-      ]
-    ],
-    "ldscript": "stm32f103xe.ld",
-    "mcu": "stm32f103zet6",
-    "variant": "KT7032"
-  },
-  "debug": {
-    "jlink_device": "STM32F103ZE",
-    "openocd_target": "stm32f1x",
-    "svd_path": "STM32F103xx.svd"
-  },
-  "frameworks": [
-    "arduino",
-    "mbed",
-    "cmsis",
-    "libopencm3",
-    "stm32cube"
-  ],
-  "name": "KT7032",
-  "upload": {
-    "maximum_ram_size": 49152,
-    "maximum_size": 262144,
-    "protocol": "stlink",
-    "protocols": [
-      "jlink",
-      "stlink",
-      "blackmagic",
-      "mbed",
-      "dfu"
-    ]
-  },
-  "url": "http://www.st.com/content/st_com/en/products/microcontrollers/stm32-32-bit-arm-cortex-mcus/stm32f1-series/stm32f103/stm32f103rc.html",
-  "vendor": "Generic"
-}
->>>>>>> .theirs
