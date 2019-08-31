@@ -1,6 +1,6 @@
 {
   "build": {
-    "core": "maple",
+    "core": "stm32",
     "cpu": "cortex-m3",
     "extra_flags": "-DSTM32F103xE",
     "f_cpu": "72000000L",
@@ -16,7 +16,7 @@
     ],
     "ldscript": "stm32f103xe.ld",
     "mcu": "stm32f103vet6",
-    "variant": "STM32F1"
+    "variant": "tm3263"
   },
   "debug": {
     "jlink_device": "STM32F103VE",
@@ -30,10 +30,10 @@
     "libopencm3",
     "stm32cube"
   ],
-  "name": "KT2830",
+  "name": "TM3263",
   "upload": {
-    "maximum_ram_size": 49152,
-    "maximum_size": 262144,
+    "maximum_ram_size": 65536,
+    "maximum_size": 524288,
     "protocol": "stlink",
     "protocols": [
       "jlink",
@@ -43,6 +43,6 @@
       "dfu"
     ]
   },
-  "url": "http://www.st.com/content/st_com/en/products/microcontrollers/stm32-32-bit-arm-cortex-mcus/stm32f1-series/stm32f103/stm32f103rc.html",
-  "vendor": "Generic"
+  "url": "http://www.kaikong.cn/r/nRy",
+  "vendor": "Kaikong Beijing"
 }
