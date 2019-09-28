@@ -2,7 +2,7 @@
   "build": {
     "core": "stm32",
     "cpu": "cortex-m3",
-    "extra_flags": "-DSTM32F107xx",
+    "extra_flags": "-DSTM32F107xC",
     "f_cpu": "72000000L",
     "hwids": [
       [
@@ -16,7 +16,7 @@
     ],
     "ldscript": "stm32f107vc.ld",
     "mcu": "stm32f107vct6",
-    "variant": "stm32f1"
+    "variant": "stm32f107"
   },
   "debug": {
   "jlink_device": "STM32F107VC",
