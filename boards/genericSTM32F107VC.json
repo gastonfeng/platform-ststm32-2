@@ -28,7 +28,7 @@
     "libopencm3",
     "stm32cube"
   ],
-  "name": "STM32F107VC (48k RAM. 256k Flash)",
+  "name": "STM32F107VC (64k RAM. 256k Flash)",
   "upload": {
     "disable_flushing": false,
     "maximum_ram_size": 49152,
