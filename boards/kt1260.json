@@ -14,7 +14,7 @@
         "0x0004"
       ]
     ],
-    "ldscript": "stm32f103xe.ld",
+    "ldscript": "stm32f107vc.ld",
     "mcu": "stm32f107vct6",
     "variant": "kt1260"
   },
@@ -25,13 +25,11 @@
   },
   "frameworks": [
     "arduino",
-    "mbed",
-    "cmsis",
-    "libopencm3",
     "stm32cube"
   ],
   "name": "kt1260",
   "upload": {
+    "disable_flushing": false,
     "maximum_ram_size": 65536,
     "maximum_size": 262144,
     "protocol": "stlink",
