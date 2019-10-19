@@ -25,7 +25,6 @@
   },
   "frameworks": [
     "arduino",
-    "libopencm3",
     "stm32cube"
   ],
   "name": "STM32F107VC (64k RAM. 256k Flash)",
@@ -36,14 +35,8 @@
     "protocol": "stlink",
     "protocols": [
       "jlink",
-      "stlink",
-      "blackmagic",
-      "serial",
-      "dfu"
-    ],
-    "require_upload_port": true,
-    "use_1200bps_touch": false,
-    "wait_for_upload_port": false
+      "stlink"
+    ]
   },
   "url": "http://www.st.com/en/microcontrollers/stm32f107vc.html",
   "vendor": "Generic"
