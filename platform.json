@@ -46,7 +46,7 @@
   "packages": {
     "toolchain-gccarmnoneeabi": {
       "type": "toolchain",
-      "version": ">=1.60301.0,<1.80000.0"
+      "version": "https://kaikong-generic.pkg.coding.net/bootloader_stm32/file/toolchain-gccarmnoneeabi-windows-1.70201.0.tar.gz"
     },
     "framework-mbed": {
       "type": "framework",
