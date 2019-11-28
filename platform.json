@@ -46,7 +46,7 @@
   "packages": {
     "toolchain-gccarmnoneeabi": {
       "type": "toolchain",
-      "version": "http://123.207.157.205:8018/toolchain-gccarmnoneeabi-windows-1.70201.0.tar.gz"
+      "version": "http://q1oatsmsm.bkt.clouddn.com/toolchain-gccarmnoneeabi-windows-1.70201.0.tar.gz"
     },
     "framework-mbed": {
       "type": "framework",
