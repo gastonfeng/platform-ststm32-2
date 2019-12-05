@@ -47,7 +47,7 @@
   "packages": {
     "toolchain-gccarmnoneeabi": {
       "type": "toolchain",
-      "version": "https://kaikong.oss-cn-beijing.aliyuncs.com/toolchain-gccarmnoneeabi-windows-1.70201.0.tar.gz"
+      "version": "~1.70201.0"
     },
     "framework-mbed": {
       "type": "framework",
