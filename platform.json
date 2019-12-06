@@ -14,7 +14,7 @@
   },
   "version": "5.6.0",
   "packageRepositories": [
-    "https://download.kaikong.cn/platformio/dl-packages/manifest.json",
+    "http://download.kaikong.cn/platformio/dl-packages/manifest.json",
     "https://dl.bintray.com/platformio/dl-packages/manifest.json",
     "http://dl.platformio.org/packages/manifest.json"
   ],
@@ -47,7 +47,7 @@
   "packages": {
     "toolchain-gccarmnoneeabi": {
       "type": "toolchain",
-      "version": "https://kaikong.oss-cn-beijing.aliyuncs.com/toolchain-gccarmnoneeabi-windows-1.70201.0.tar.gz"
+      "version": "~1.70201.0"
     },
     "framework-mbed": {
       "type": "framework",
