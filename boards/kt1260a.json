@@ -1,0 +1,46 @@
+{
+  "build": {
+    "core": "stm32",
+    "cpu": "cortex-m4",
+    "extra_flags": "-DSTM32F407xx",
+    "f_cpu": "168000000L",
+    "hwids": [
+      [
+        "0x1EAF",
+        "0x0003"
+      ],
+      [
+        "0x1EAF",
+        "0x0004"
+      ]
+    ],
+    "ldscript": "stm32f407ve.ld",
+    "mcu": "stm32f407vet6",
+    "variant": "stm32f407"
+  },
+  "debug": {
+    "jlink_device": "STM32F407VE",
+    "openocd_target": "stm32f4x",
+    "svd_path": "STM32F407xx.svd"
+  },
+  "frameworks": [
+    "arduino",
+    "stm32cube"
+  ],
+  "name": "kt1260a",
+  "upload": {
+    "disable_flushing": false,
+    "maximum_ram_size": 196608,
+    "maximum_size": 503808,
+    "protocol": "stlink",
+    "protocols": [
+      "jlink",
+      "stlink"
+    ]
+  },
+  "url": "http://www.kaikong.cn/r/kdx",
+  "vendor": "Kaikong"
+}
+
+
+
