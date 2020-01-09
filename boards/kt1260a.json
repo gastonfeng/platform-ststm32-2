@@ -16,7 +16,7 @@
     ],
     "ldscript": "stm32f407ve.ld",
     "mcu": "stm32f407vet6",
-    "variant": "stm32f407"
+    "variant": "kt1260a"
   },
   "debug": {
     "jlink_device": "STM32F407VE",
@@ -31,7 +31,7 @@
   "upload": {
     "disable_flushing": false,
     "maximum_ram_size": 196608,
-    "maximum_size": 503808,
+    "maximum_size": 495616,
     "protocol": "stlink",
     "protocols": [
       "jlink",
