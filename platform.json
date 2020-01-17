@@ -14,9 +14,7 @@
   },
   "version": "5.6.0",
   "packageRepositories": [
-    "http://download.kaikong.cn/platformio/dl-packages/manifest.json",
-    "https://dl.bintray.com/platformio/dl-packages/manifest.json",
-    "http://dl.platformio.org/packages/manifest.json"
+    "http://download.kaikong.cn/platformio/dl-packages/manifest.json"
   ],
   "frameworks": {
     "mbed": {
