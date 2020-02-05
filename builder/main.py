@@ -226,7 +226,7 @@ AlwaysBuild(target_size)
 #
 # Target: Upload by default .bin file
 #
-if False:
+if "static" != env.subst("$UPLOAD_PROTOCOL"):
     upload_protocol = env.subst("$UPLOAD_PROTOCOL")
     debug_tools = board.get("debug.tools", {})
     upload_source = target_firm
@@ -420,7 +420,7 @@ if False:
     #
     # Default targets
     #
-    # if "staticlib" in BUILD_TARGETS:
+if "static" == env.subst("$UPLOAD_PROTOCOL"):
     Default([target_size])
-# else:
-#     Default([target_buildprog, target_size])
+else:
+    Default([target_buildprog, target_size])
