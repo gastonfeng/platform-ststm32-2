@@ -160,18 +160,18 @@ def BuildStaticLib(env):
             set(["debug", "sizedata"]) & set(COMMAND_LINE_TARGETS)
             or env.GetProjectOption("build_type") == "debug"
     )
+    mcu=env.get("BOARD")
     if is_build_type_debug:
         env.ConfigureDebugFlags()
+        env.Replace(PROGNAME=mcu+"d")
+    else:
+        env.Replace(PROGNAME=mcu)
 
     # remove specified flags
     env.ProcessUnFlags(env.get("BUILD_UNFLAGS"))
 
     if "__test" in COMMAND_LINE_TARGETS:
         env.ConfigureTestTarget()
-
-    # append into the beginning a main LD script
-    if env.get("LDSCRIPT_PATH") and not any("-Wl,-T" in f for f in env["LINKFLAGS"]):
-        env.Prepend(LINKFLAGS=["-T", env.subst("$LDSCRIPT_PATH")])
 
     # enable "cyclic reference" for linker
     if env.get("LIBS") and env.GetCompilerType() == "gcc":

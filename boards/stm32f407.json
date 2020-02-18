@@ -27,7 +27,7 @@
     "arduino",
     "stm32cube"
   ],
-  "name": "kt1260a",
+  "name": "stm32f407",
   "upload": {
     "disable_flushing": false,
     "maximum_ram_size": 196608,
