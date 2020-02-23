@@ -48,7 +48,7 @@
       "version": "~1.70201.0"
     },
     "tool-scons": {
-      "version": "~3.30101.0"
+      "version": "~3.30102.0"
     },
     "framework-mbed": {
       "type": "framework",
