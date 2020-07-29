@@ -2,7 +2,7 @@
   "build": {
     "core": "stm32",
     "cpu": "cortex-m3",
-    "extra_flags": "-DSTM32F103xB",
+    "extra_flags": "-DSTM32F103xE",
     "f_cpu": "72000000L",
     "hwids": [
       [
@@ -14,7 +14,7 @@
         "0x0004"
       ]
     ],
-    "ldscript": "STM32F103xB.ld",
+    "ldscript": "STM32F103xE.ld",
     "mcu": "stm32f103rct6",
     "variant": "km9109"
   },
