@@ -14,8 +14,8 @@
         "0x0004"
       ]
     ],
-    "ldscript": "stm32f103xb.ld",
     "mcu": "stm32f103tbu6",
+    "product_line": "STM32F103xB",
     "variant": "HY_TinySTM103T"
   },
   "debug": {
@@ -25,7 +25,9 @@
   },
   "frameworks": [
     "arduino",
-    "stm32cube"
+    "cmsis",
+    "stm32cube",
+    "libopencm3"
   ],
   "name": "Tiny STM103T",
   "upload": {

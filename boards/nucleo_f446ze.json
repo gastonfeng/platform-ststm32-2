@@ -1,9 +1,10 @@
 {
   "build": {
     "cpu": "cortex-m4",
-    "extra_flags": "-DSTM32F446xx",
+    "extra_flags": "-DSTM32F4 -DSTM32F446xx",
     "f_cpu": "180000000L",
-    "mcu": "stm32f446zet6"
+    "mcu": "stm32f446zet6",
+    "product_line": "STM32F446xx"
   },
   "connectivity": [
     "can"
@@ -20,8 +21,10 @@
     "svd_path": "STM32F446x.svd"
   },
   "frameworks": [
+    "cmsis",
     "mbed",
-    "stm32cube"
+    "stm32cube",
+    "libopencm3"
   ],
   "name": "ST Nucleo F446ZE",
   "upload": {

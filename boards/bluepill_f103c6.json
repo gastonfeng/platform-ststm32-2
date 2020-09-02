@@ -15,6 +15,7 @@
       ]
     ],
     "mcu": "stm32f103c6t6",
+    "product_line": "STM32F103x6",
     "variant": "PILL_F103XX"
   },
   "debug": {
@@ -32,7 +33,8 @@
   "frameworks": [
     "arduino",
     "cmsis",
-    "stm32cube"
+    "stm32cube",
+    "libopencm3"
   ],
   "name": "BluePill F103C6",
   "upload": {

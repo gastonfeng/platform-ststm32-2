@@ -4,6 +4,7 @@
     "extra_flags": "-DSTM32L496xx",
     "f_cpu": "80000000L",
     "mcu": "stm32l496zgt6p",
+    "product_line": "STM32L496xx",
     "variant": "NUCLEO_L496ZG"
   },
   "connectivity": [
@@ -22,8 +23,10 @@
   },
   "frameworks": [
     "arduino",
+    "cmsis",
     "mbed",
-    "stm32cube"
+    "stm32cube",
+    "libopencm3"
   ],
   "name": "ST Nucleo L496ZG-P",
   "upload": {

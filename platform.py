@@ -12,26 +12,53 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import json
+import os
+
 from platform import system
 
 from platformio.managers.platform import PlatformBase
-
+from platformio.util import get_systype
 
 class Ststm32Platform(PlatformBase):
 
     def configure_default_packages(self, variables, targets):
         board = variables.get("board")
+        board_config = self.board_config(board)
         build_core = variables.get(
-            "board_build.core", self.board_config(variables.get("board")).get(
-                "build.core", "arduino"))
+            "board_build.core", board_config.get("build.core", "arduino"))
 
-        if "arduino" in variables.get("pioframework", []) and build_core == "maple":
-            self.frameworks['arduino']['package'] = "framework-arduinoststm32-maple"
-            self.packages["framework-arduinoststm32-maple"]["optional"] = False
-            self.packages["framework-arduinoststm32"]["optional"] = True
+        frameworks = variables.get("pioframework", [])
+        if "arduino" in frameworks:
+            if build_core == "maple":
+                self.frameworks["arduino"]["package"] = "framework-arduinoststm32-maple"
+                self.packages["framework-arduinoststm32-maple"]["optional"] = False
+                self.packages["framework-arduinoststm32"]["optional"] = True
+            else:
+                self.packages["toolchain-gccarmnoneeabi"]["version"] = "~1.90201.0"
+                self.packages["framework-cmsis"]["version"] = "~2.50501.0"
+                self.packages["framework-cmsis"]["optional"] = False
 
-        default_protocol = self.board_config(variables.get(
-            "board")).get("upload.protocol") or ""
+        if "mbed" in frameworks:
+            deprecated_boards_file = os.path.join(
+                self.get_dir(), "misc", "mbed_deprecated_boards.json")
+            if os.path.isfile(deprecated_boards_file):
+                with open(deprecated_boards_file) as fp:
+                    if board in json.load(fp):
+                        self.packages["framework-mbed"]["version"] = "~6.51504.0"
+            self.packages["toolchain-gccarmnoneeabi"]["version"] = "~1.90201.0"
+
+        if "cmsis" in frameworks:
+            assert board_config.get(
+                "build.mcu", ""), ("Missing MCU field for %s" % board)
+            device_package = "framework-cmsis-" + board_config.get("build.mcu")[0:7]
+            if device_package in self.packages:
+                self.packages[device_package]["optional"] = False
+
+        if any(f in frameworks for f in ("cmsis", "stm32cube")):
+            self.packages["tool-ldscripts-ststm32"]["optional"] = False
+
+        default_protocol = board_config.get("upload.protocol") or ""
         if variables.get("upload_protocol", default_protocol) == "dfu":
             self.packages["tool-dfuutil"]["optional"] = False
 
@@ -42,13 +69,21 @@ class Ststm32Platform(PlatformBase):
                 'script'] = "builder/frameworks/arduino/mxchip.py"
             self.packages['toolchain-gccarmnoneeabi']['version'] = "~1.60301.0"
 
+        if "zephyr" in variables.get("pioframework", []):
+            for p in self.packages:
+                if p.startswith("framework-zephyr-") or p in (
+                        "tool-cmake", "tool-dtc", "tool-ninja"):
+                    self.packages[p]["optional"] = False
+            self.packages['toolchain-gccarmnoneeabi']['version'] = "~1.80201.0"
+            if "windows" not in get_systype():
+                self.packages['tool-gperf']['optional'] = False
+
         # configure J-LINK tool
         jlink_conds = [
             "jlink" in variables.get(option, "")
             for option in ("upload_protocol", "debug_tool")
         ]
-        if variables.get("board"):
-            board_config = self.board_config(variables.get("board"))
+        if board:
             jlink_conds.extend([
                 "jlink" in board_config.get(key, "")
                 for key in ("debug.default_tools", "upload.protocol")
@@ -103,8 +138,7 @@ class Ststm32Platform(PlatformBase):
                         "executable": ("JLinkGDBServerCL.exe"
                                        if system() == "Windows" else
                                        "JLinkGDBServer")
-                    },
-                    "onboard": link in debug.get("onboard_tools", [])
+                    }
                 }
             else:
                 server_args = ["-s", "$PACKAGE_DIR/scripts"]
@@ -128,10 +162,10 @@ class Ststm32Platform(PlatformBase):
                         "package": "tool-openocd",
                         "executable": "bin/openocd",
                         "arguments": server_args
-                    },
-                    "onboard": link in debug.get("onboard_tools", []),
-                    "default": link in debug.get("default_tools", [])
+                    }
                 }
+            debug['tools'][link]['onboard'] = link in debug.get("onboard_tools", [])
+            debug['tools'][link]['default'] = link in debug.get("default_tools", [])
 
         board.manifest['debug'] = debug
         return board

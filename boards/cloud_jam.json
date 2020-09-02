@@ -4,8 +4,8 @@
     "cpu": "cortex-m4",
     "extra_flags": "-DSTM32F4 -DSTM32F401xE -DSTM32F40_41xxx",
     "f_cpu": "84000000L",
-    "ldscript": "stm32f401xe.ld",
     "mcu": "stm32f401ret6",
+    "product_line": "STM32F401xE",
     "variant": "stm32f401xe"
   },
   "debug": {
@@ -23,7 +23,8 @@
     "mbed",
     "cmsis",
     "spl",
-    "stm32cube"
+    "stm32cube",
+    "libopencm3"
   ],
   "name": "RushUp Cloud-JAM",
   "upload": {

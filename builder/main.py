@@ -28,6 +28,7 @@ from SCons.Script import Export  # pylint: disable=import-error
 from SCons.Script import SConscript  # pylint: disable=import-error
 
 env = DefaultEnvironment()
+env.SConscript("compat.py", exports="env")
 platform = env.PioPlatform()
 board = env.BoardConfig()
 
@@ -200,6 +201,13 @@ def BuildStaticLib(env):
 
 
 env.AddMethod(BuildStaticLib)
+if "zephyr" in env.get("PIOFRAMEWORK", []):
+    env.SConscript(
+        join(platform.get_package_dir(
+            "framework-zephyr"), "scripts", "platformio", "platformio-build-pre.py"),
+        exports={"env": env}
+    )
+
 target_elf = None
 if "nobuild" in COMMAND_LINE_TARGETS:
     target_elf = join("$BUILD_DIR", "${PROGNAME}.elf")
@@ -416,6 +424,9 @@ if "static" != env.subst("$UPLOAD_PROTOCOL"):
         sys.stderr.write("Warning! Unknown upload protocol %s\n" % upload_protocol)
 
     AlwaysBuild(env.Alias("upload", upload_source, upload_actions))
+if any("-Wl,-T" in f for f in env.get("LINKFLAGS", [])):
+    print("Warning! '-Wl,-T' option for specifying linker scripts is deprecated. "
+          "Please use 'board_build.ldscript' option in your 'platformio.ini' file.")
 
     #
     # Default targets

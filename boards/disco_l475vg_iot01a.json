@@ -7,7 +7,11 @@
       "arduino": "-DARDUINO_DISCO_L475VG_IOT"
     },
     "mcu": "stm32l475vgt6",
-    "variant": "DISCO_L475VG_IOT"
+    "product_line": "STM32L475xx",
+    "variant": "DISCO_L475VG_IOT",
+    "zephyr": {
+       "variant": "disco_l475_iot1"
+    }
   },
   "connectivity": [
     "bluetooth",
@@ -27,10 +31,13 @@
   },
   "frameworks": [
     "arduino",
+    "cmsis",
     "mbed",
-    "stm32cube"
+    "stm32cube",
+    "libopencm3",
+    "zephyr"
   ],
-  "name": "ST DISCO-L475VG-IOT01A",
+  "name": "ST B-L475E-IOT01A Discovery kit",
   "upload": {
     "maximum_ram_size": 131072,
     "maximum_size": 1048576,

@@ -4,8 +4,8 @@
     "cpu": "cortex-m3",
     "extra_flags": "-DSTM32F103xB",
     "f_cpu": "72000000L",
-    "ldscript": "stm32f103xb.ld",
     "mcu": "stm32f103rbt6",
+    "product_line": "STM32F103xB",
     "variant": "NUCLEO_F103RB"
   },
   "debug": {
@@ -21,9 +21,11 @@
   },
   "frameworks": [
     "arduino",
+    "cmsis",
     "mbed",
     "libopencm3",
-    "stm32cube"
+    "stm32cube",
+    "zephyr"
   ],
   "name": "ST Nucleo F103RB",
   "upload": {

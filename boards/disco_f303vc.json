@@ -4,9 +4,12 @@
     "cpu": "cortex-m4",
     "extra_flags": "-DSTM32F3 -DSTM32F303xC",
     "f_cpu": "72000000L",
-    "ldscript": "stm32f30xx.ld",
     "mcu": "stm32f303vct6",
-    "variant": "stm32f303xc"
+    "product_line": "STM32F303xC",
+    "variant": "stm32f303xc",
+    "zephyr": {
+       "variant": "stm32f3_disco"
+    }
   },
   "debug": {
     "default_tools": [
@@ -24,7 +27,8 @@
     "cmsis",
     "spl",
     "libopencm3",
-    "stm32cube"
+    "stm32cube",
+    "zephyr"
   ],
   "name": "ST STM32F3DISCOVERY",
   "upload": {

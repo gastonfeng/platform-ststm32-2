@@ -3,7 +3,8 @@
     "cpu": "cortex-m3",
     "extra_flags": "-DSTM32L152xC",
     "f_cpu": "32000000L",
-    "mcu": "stm32l152rc"
+    "mcu": "stm32l152rc",
+    "product_line": "STM32L152xC"
   },
   "debug": {
     "jlink_device": "STM32L152RC",
@@ -12,7 +13,9 @@
   },
   "frameworks": [
     "mbed",
-    "stm32cube"
+    "cmsis",
+    "stm32cube",
+    "libopencm3"
   ],
   "name": "NAMote72",
   "upload": {
